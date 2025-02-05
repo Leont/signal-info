@@ -60,14 +60,17 @@ UV siginfo_addr(Signal::Info self)
 
 #ifdef si_fd
 IV siginfo_fd(Signal::Info self)
+
 #endif
 
 #ifdef si_timerid
 IV siginfo_timerid(Signal::Info self)
+
 #endif
 
 #ifdef si_overrun
 IV siginfo_overrun(Signal::Info self)
+
 #endif
 
 MODULE = Signal::Info    PACKAGE = Time::Spec    PREFIX = timespec_
