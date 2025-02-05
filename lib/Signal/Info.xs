@@ -4,8 +4,7 @@
 #include "XSUB.h"
 
 typedef siginfo_t* Signal__Info;
-
-MODULE = Signal::Info    PACKAGE = Signal::Info    PREFIX = siginfo_
+typedef struct timespec* Time__Spec;
 
 #define siginfo_signo(self) (self)->si_signo
 #define siginfo_code(self) (self)->si_code
@@ -22,6 +21,13 @@ MODULE = Signal::Info    PACKAGE = Signal::Info    PREFIX = siginfo_
 
 #define siginfo_value(self) (self)->si_value.sival_int
 #define siginfo_ptr(self) PTR2UV((self)->si_value.sival_ptr)
+
+#define timespec_new(class, value) &(value)
+#define timespec_sec(self) (self)->tv_sec
+#define timespec_nsec(self) (self)->tv_nsec
+#define timespec_to_float(self) (self)->tv_sec + ((self)->tv_nsec / (double)1000000000)
+
+MODULE = Signal::Info    PACKAGE = Signal::Info    PREFIX = siginfo_
 
 PROTOTYPES: DISABLED
 
@@ -63,3 +69,13 @@ IV siginfo_timerid(Signal::Info self)
 #ifdef si_overrun
 IV siginfo_overrun(Signal::Info self)
 #endif
+
+MODULE = Signal::Info    PACKAGE = Time::Spec    PREFIX = timespec_
+
+Time::Spec timespec_new(class, struct timespec value)
+
+UV timespec_sec(Time::Spec self)
+
+UV timespec_nsec(Time::Spec self)
+
+NV timespec_to_float(Time::Spec self)
