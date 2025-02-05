@@ -26,9 +26,10 @@ MODULE = Signal::Info    PACKAGE = Signal::Info    PREFIX = siginfo_
 PROTOTYPES: DISABLED
 
 Signal::Info new(class)
-	CODE:
-	RETVAL = safecalloc(1, sizeof(siginfo_t));
-	OUTPUT:
+CODE:
+	siginfo_t temp;
+	RETVAL = &temp;
+OUTPUT:
 	RETVAL
 
 IV siginfo_signo(Signal::Info self)
