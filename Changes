@@ -1,6 +1,7 @@
 Revision history for Signal-Info
 
 {{$NEXT}}
+          - Split Time::Spec into its own distribution
 
 0.002     2025-02-05 20:57:17+01:00 Europe/Brussels
           - Add Time::Spec
