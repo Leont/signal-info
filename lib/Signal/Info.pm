@@ -76,7 +76,7 @@ Timer overrun count of POSIX real-time timers. This may not be available everywh
 
 =head1 CODE FLAGS
 
-The following constants are defined for the C<code> field, all having their L<POSIX|https://pubs.opengroup.org/onlinepubs/009695399/basedefs/signal.h.html> meanings.
+The following constants are defined for the C<code> field, all having their L<POSIX|https://pubs.opengroup.org/onlinepubs/009695399/basedefs/signal.h.html> meanings. Some may not be defined on all platforms.
 
 =over 4
 
@@ -122,9 +122,9 @@ The following constants are defined for the C<code> field, all having their L<PO
 
 =item * C<BUS_OBJERR>
 
-=item * C<TRAP_BRKPT>
+=item * C<TRAP_BRKPT> (conditionally defined)
 
-=item * C<TRAP_TRACE>
+=item * C<TRAP_TRACE> (conditionally defined)
 
 =item * C<CLD_EXITED>
 
@@ -138,17 +138,17 @@ The following constants are defined for the C<code> field, all having their L<PO
 
 =item * C<CLD_CONTINUED>
 
-=item * C<POLL_IN>
+=item * C<POLL_IN> (conditionally defined)
 
-=item * C<POLL_OUT>
+=item * C<POLL_OUT> (conditionally defined)
 
-=item * C<POLL_MSG>
+=item * C<POLL_MSG> (conditionally defined)
 
-=item * C<POLL_ERR>
+=item * C<POLL_ERR> (conditionally defined)
 
-=item * C<POLL_PRI>
+=item * C<POLL_PRI> (conditionally defined)
 
-=item * C<POLL_HUP>
+=item * C<POLL_HUP> (conditionally defined)
 
 =item * C<SI_USER>
 
