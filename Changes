@@ -1,6 +1,7 @@
 Revision history for Signal-Info
 
 {{$NEXT}}
+          - Switch to Dist::Build
 
 0.003     2025-02-12 15:52:53+01:00 Europe/Brussels
           - Split Time::Spec into its own distribution
