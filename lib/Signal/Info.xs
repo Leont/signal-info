@@ -41,11 +41,6 @@ typedef siginfo_t* Signal__Info;
 #define siginfo_value(self) (self)->si_value.sival_int
 #define siginfo_ptr(self) PTR2UV((self)->si_value.sival_ptr)
 
-#define timespec_new(class, value) &(value)
-#define timespec_sec(self) (self)->tv_sec
-#define timespec_nsec(self) (self)->tv_nsec
-#define timespec_to_float(self) (self)->tv_sec + ((self)->tv_nsec / (double)1000000000)
-
 #define CONSTANT(cons) newCONSTSUB(stash, #cons, newSVuv(cons)); av_push(export_ok, newSVpvs(#cons))
 
 MODULE = Signal::Info    PACKAGE = Signal::Info    PREFIX = siginfo_
