@@ -156,8 +156,8 @@ The following constants are defined for the C<code> field, all having their L<PO
 
 =item * C<SI_TIMER>
 
-=item * C<SI_ASYNCIO>
+=item * C<SI_ASYNCIO> (conditionally defined)
 
-=item * C<SI_MESGQ>
+=item * C<SI_MESGQ> (conditionally defined)
 
 =back
